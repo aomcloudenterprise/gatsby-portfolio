@@ -26,7 +26,7 @@ export default ({ data }) => (
         }}
       />
       <div className="sheet__gallery">
-        <Img sizes={data.datoCmsWork.coverImage.sizes} />
+        <Img fluid={data.datoCmsWork.coverImage.fluid} />
       </div>
     </div>
   </article>
@@ -52,7 +52,7 @@ export const query = graphql`
       }
       coverImage {
         url
-        sizes(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
+        fluid(maxWidth: 600, imgixParams: { fm: "jpg", auto: "compress" }) {
           ...GatsbyDatoCmsSizes
         }
       }
